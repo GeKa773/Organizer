@@ -3,4 +3,11 @@
     <dimen name="default_margin">15dp</dimen>
     <dimen name="default_radius">15dp</dimen>
     <dimen name="default_padding">15dp</dimen>
+
+    <dimen name="calendar_text_size">30sp</dimen>
+    <dimen name="calendar_count_text_size">12sp</dimen>
+    <dimen name="calendar_end_margin">4dp</dimen>
+    <dimen name="calendar_start_margin">4dp</dimen>
+    <dimen name="calendar_top_margin">4dp</dimen>
+    <dimen name="calendar_bot_margin">4dp</dimen>
 </resources>

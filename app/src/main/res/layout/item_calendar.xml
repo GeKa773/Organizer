@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="android.kotlin.gekaradchenko.organizer.data.pojo.CalendarData" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/CalendarTextView"
+            android:layout_marginStart="@dimen/calendar_start_margin"
+            android:layout_marginTop="@dimen/calendar_top_margin"
+            android:layout_marginEnd="@dimen/calendar_end_margin"
+            android:layout_marginBottom="@dimen/calendar_bot_margin"
+            android:text="@{data.text}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="31" />
+
+        <TextView
+            android:id="@+id/countTextView"
+            style="@style/CalendarCountTextView"
+            android:layout_margin="1dp"
+            android:background="@drawable/count_calendar_nackground_true"
+
+            android:text="@{Integer.toString(data.count)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="12" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
