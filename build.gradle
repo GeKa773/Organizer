@@ -2,10 +2,11 @@
 
 ext {
     navigator_version = "2.4.1"
-    roomVersion = "2.4.1"
-    coroutinesVersion = "1.5.2"
-    glideVersion = "4.13.0"
-    daggerVersion = "2.35.1"
+    room_version = "2.4.1"
+    coroutines_version = "1.5.2"
+    glide_version = "4.13.0"
+    dagger_version = "2.35.1"
+    flexbox_version = '3.0.0'
 }
 
 buildscript {
