@@ -8,7 +8,8 @@ import androidx.lifecycle.MutableLiveData
 data class CalendarData(
     val id: Int,
     val text: String,
-    val count: Int,
+    val isToday:Boolean,
+    val recordsCount: Int,
     var isFocus: Boolean,
     val isFocusLiveData: MutableLiveData<Boolean> = MutableLiveData(false),
 )

@@ -45,6 +45,7 @@ class ToDoFragment : Fragment() {
         viewModel = ViewModelProvider(this, factory).get(ToDoFragmentViewModel::class.java)
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
+        viewModel.create()
         val calendarAdapter = CalendarAdapter(viewLifecycleOwner) {
             viewModel.focusOnDate(it)
         }
@@ -60,10 +61,6 @@ class ToDoFragment : Fragment() {
         viewModel.calendarList.observe(viewLifecycleOwner, {
             calendarAdapter.submitList(it)
         })
-
-        viewModel.setCalendarList()
-
-
 
 
 

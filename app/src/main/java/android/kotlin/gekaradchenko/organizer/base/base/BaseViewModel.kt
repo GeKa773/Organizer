@@ -15,4 +15,6 @@ abstract class BaseViewModel : ViewModel() {
         super.onCleared()
         viewModelJob.cancel()
     }
+
+    abstract fun create()
 }
