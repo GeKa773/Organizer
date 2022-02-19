@@ -10,4 +10,5 @@
     <dimen name="calendar_start_margin">4dp</dimen>
     <dimen name="calendar_top_margin">4dp</dimen>
     <dimen name="calendar_bot_margin">4dp</dimen>
+    <dimen name="toolbar_text_size">16sp</dimen>
 </resources>
