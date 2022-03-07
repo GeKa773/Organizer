@@ -11,4 +11,6 @@
     <dimen name="calendar_top_margin">4dp</dimen>
     <dimen name="calendar_bot_margin">4dp</dimen>
     <dimen name="toolbar_text_size">16sp</dimen>
+    <dimen name="title_to_do_text_size">18sp</dimen>
+    <dimen name="text_to_do_text_size">14sp</dimen>
 </resources>

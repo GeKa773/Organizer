@@ -38,4 +38,16 @@
         <item name="android:layout_marginEnd">4dp</item>
 
     </style>
+
+    <style name="TitleToDoTextView">
+        <item name="android:textSize">@dimen/title_to_do_text_size</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextToDoTextView">
+        <item name="android:textSize">@dimen/text_to_do_text_size</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textStyle">normal</item>
+    </style>
 </resources>

@@ -10,12 +10,14 @@ import android.kotlin.gekaradchenko.organizer.R
 import android.kotlin.gekaradchenko.organizer.appComponent
 import android.kotlin.gekaradchenko.organizer.databinding.FragmentToDoBinding
 import android.kotlin.gekaradchenko.organizer.ui.todo.adapter.CalendarAdapter
+import android.kotlin.gekaradchenko.organizer.ui.todo.adapter.ToDoCalendarAdapter
 import android.kotlin.gekaradchenko.organizer.ui.todo.viewmodel.ToDoFragmentViewModel
 import android.kotlin.gekaradchenko.organizer.ui.todo.viewmodel.ToDoFragmentViewModelFactory
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.coroutineScope
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.flexbox.FlexDirection
 import com.google.android.flexbox.FlexboxLayoutManager
 import com.google.android.flexbox.JustifyContent
@@ -46,6 +48,9 @@ class ToDoFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
         viewModel.create()
+
+
+        /*-----------------------------calendar recycler view-------------------------------*/
         val calendarAdapter = CalendarAdapter(viewLifecycleOwner) {
             viewModel.focusOnDate(it)
         }
@@ -62,7 +67,18 @@ class ToDoFragment : Fragment() {
             calendarAdapter.submitList(it)
         })
 
+        /*-----------------------------to do calendar recycler view-------------------------------*/
 
+        val toDoCalendarAdapter = ToDoCalendarAdapter()
+
+        binding.toDoRecyclerView.apply {
+            adapter = toDoCalendarAdapter
+            layoutManager = LinearLayoutManager(requireContext())
+        }
+
+        viewModel.toDoCalendarList.observe(viewLifecycleOwner, {
+            toDoCalendarAdapter.submitList(it)
+        })
 
 
         return binding.root

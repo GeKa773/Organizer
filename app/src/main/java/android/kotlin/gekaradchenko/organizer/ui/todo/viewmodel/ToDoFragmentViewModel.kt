@@ -3,6 +3,7 @@ package android.kotlin.gekaradchenko.organizer.ui.todo.viewmodel
 import android.kotlin.gekaradchenko.organizer.base.base.BaseViewModel
 import android.kotlin.gekaradchenko.organizer.base.data.DataManager
 import android.kotlin.gekaradchenko.organizer.data.pojo.CalendarData
+import android.kotlin.gekaradchenko.organizer.data.pojo.ToDoCalendarData
 import android.kotlin.gekaradchenko.organizer.util.CalendarUtil
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -17,10 +18,14 @@ class ToDoFragmentViewModel
 
     override fun create() {
         getCalendarArray()
+        getToDoCalendarArray()
     }
 
     private val _calendarList = MutableLiveData<ArrayList<CalendarData>>()
     val calendarList: LiveData<ArrayList<CalendarData>> = _calendarList
+
+    private val _toDoCalendarList = MutableLiveData<ArrayList<ToDoCalendarData>>()
+    val toDoCalendarList: LiveData<ArrayList<ToDoCalendarData>> = _toDoCalendarList
 
 //    fun setCalendarList() {
 //        val array = ArrayList<CalendarData>()
@@ -54,6 +59,14 @@ class ToDoFragmentViewModel
         }
         _calendarList.value = array
 
+    }
+
+    fun getToDoCalendarArray() {
+        val array = ArrayList<ToDoCalendarData>()
+        repeat(17) {
+            array.add(ToDoCalendarData(it.toLong(), "Title", "Text text text"))
+        }
+        _toDoCalendarList.value = array
     }
 
 
